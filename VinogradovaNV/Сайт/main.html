@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang = "ru">
+<head>
+	<meta charset = "UTF-8">
+	<title>Lern JavaScript</title>
+	<link rel = "stylesheet" href = "main.css">
+	<link rel="shortcut icon" href="img/js.ico">
+   
+</head>
+<body>
+	<header onselectstart="return false">
+		<div class="headerCont">
+	
+			<a href="#title">
+				<div class="logo">
+					<img src="img/js.png">
+					<div class="logoText"><p>Java</p><p>Script</p></div>
+				</div>
+			</a>
+
+			<a href="#introduction" onclick="aBitHigher(130);">
+				<div class="headLink">
+					<p>Общие</p><p>сведения</p>
+				</div>
+			</a>
+
+			<a href="#whyJS" onclick="aBitHigher(130);">
+				<div class="headLink">
+					<p>Зачем</p><p>нужен JS</p>
+				</div>
+			</a>
+
+			<a href="#using" onclick="aBitHigher(130);">
+				<div class="headLink">
+					<p>Где JS</p><p>используется</p>
+				</div>
+			</a>
+
+			<a href="#disadvantages" onclick="aBitHigher(130);">
+				<div class="headLink">
+					<p>Недостатки</p><p>JavaScript</p>
+				</div>
+			</a>
+
+			<div id="lastbut">
+				<a href="#examples" onclick="aBitHigher(130 * isNameTyped());">
+					<div class="headLink" style="font-size: 20px;">
+						<p>Примеры</p><p>использования</p>
+					</div>
+				</a>
+
+				<div class="dropListButton hidden" id="ddlb" onclick="
+					closeOrOpenList();
+				"><img src="img/arrow.png"></div>
+			</div>
+
+		</div>
+		
+	</header>
+
+
+	<div class="exampleList hidden invis" id="exampleList" onclick="closeOrOpenList();">
+		<a href="#examples"><p>Знакомство</p></a>
+		<a href="#triangleSquareLink"><p>Площадь треугольника</p></a>
+		<a href="#stringsEqual"><p>Сравнение строк</p></a>
+		<a href="#array"><p>Массив из 5 чисел</p></a>
+		<a href="#testStart"><p>Тест</p></a>
+		<a href="#bigWindowLink"><p>Всплывающее окно</p></a>
+	</div>
+
+	<div class="userCont hidden" id="showUser">
+		<p id="onlyName"></p>
+		<img src="img/user.png">
+	</div>
+
+    <div class="backImg">
+        <img src="img\back.jpeg" alt="Alternate Text" class="mainJp"/>
+	</div>
+	<a class="upperLink" name="title">
+		
+	</a>
+	<div class="mainCont">
+		
+		<h1>Добро пожаловать на ваш первый урок по JavaScript!</h1>
+
+		<p class="mainText">
+			В этом уроке вы узнаете про такой полезный и интересный язык как <b>JavaScript</b>, а также увидите, в каких областях он применяется и даже увидите некоторые интерактивные примеры его использования.
+		</p>
+		<img src="img/jsExample.jpeg">
+
+		<h1><a name="introduction">
+			Общие сведения о языке JavaScript</a></h1>
+		<p class="mainText">
+			JavaScript (часто просто JS) — это легковесный, интерпретируемый, объектно-ориентированный язык с функциями первого класса. Наиболее широкое применение находит как язык сценариев веб-страниц, но также используется и в других программных продуктах, например, node.js или Apache CouchDB. JavaScript — это прототипно-ориентированный, мультипарадигменный язык с динамической типизацией, который поддерживает объектно-ориентированный, императивный и декларативный (например, функциональное программирование) стили программирования.
+		</p>
+		<p class="mainText">
+			В статье «The World’s Most Misunderstood Programming Language Has Become the World’s Most Popular Programming Language» (с англ. — «Самый неправильно понятый язык программирования в мире стал самым популярным в мире языком программирования») Дуглас Крокфорд утверждает, что лидирующую позицию JavaScript занял в связи с развитием AJAX, поскольку браузер стал превалирующей системой доставки приложений. Он также констатирует растущую популярность JavaScript, то, что этот язык встраивается в приложения, отмечает значимость языка.
+		</p>
+		<p class="mainText">
+			Согласно TIOBE Index, базирующемуся на данных поисковых систем Google, MSN, Yahoo!, Википедия и YouTube, в апреле 2015 года JavaScript находился на 6-м месте (год назад — на 9-м). По данным Black Duck Software (англ.), в разработке открытого программного обеспечения доля использования JavaScript росла. 36 % проектов, выпуски которых состоялись с августа 2008 по август 2009 гг., включают JavaScript, наиболее часто используемый язык программирования с быстрорастущей популярностью. 80 % открытого программного обеспечения использует Си, C++, Java, Shell и JavaScript. При этом JavaScript — единственный из этих языков, чья доля использования увеличилась (более чем на 2 процента, если считать в строках кода).
+		</p><!--<p class="mainText">	
+			JavaScript является самым популярным языком программирования, используемым для разработки веб-приложений на стороне клиента.</p> -->
+		<img src="img/rating.jpeg">
+
+		<h1><a name="whyJS">
+			Зачем нужен JavaScript?</a></h1>
+
+		<p class="mainText">
+			С помощью JavaScript можно создать интерактивность для клиента: форма для регистрации или заявка на подробное описание товара, а также кнопка «подписаться».<br><br>
+			Сейчас JavaScript — единственный язык программирования для браузеров. Он работает под Windows, macOS, Linux и на мобильных платформах, то есть везде. Если не знаешь JavaScript, делать в программировании интерактивных сайтов нечего.
+		</p>	
+		<img src="img/browsers.png" style="width: 300px; margin: 0 0 10px 50%" class="leftTrans">
+
+		<h1><a name="using">
+			Где используется JavaScript?</a></h1>
+
+		<p class="mainText">
+			Для большинства специалистов веб-разработка остается единственной областью применения JavaScript. Многие начинающие даже уверены, что эффективно использовать его где-то еще просто не получится. Такое существует устоявшееся мнение: истинные размеры использования JavaScript за пределами веб-разработки чрезвычайно невелики. Причин называют много: он проигрывает конкуренцию другим языкам и подходит далеко не для всех проектов.
+			<br><br>
+			Но есть мнение и прямо противоположное. JavaScript-фреймворки творят настоящие чудеса и позволяют использовать JS абсолютно везде! Истина, как водится, где-то посередине.
+			<br>
+			Мы расскажем о тех направлениях, где вы можете программировать на JavaScript и добиваться совершенно выдающихся результатов.
+			<br><br>
+			<b>Интернет вещей</b> (IoT) - отрасль, в которой значение JavaScript только возрастает, а новые JS-инструменты появляются буквально каждый день. В IoT распространена платформа Arduino (микрокомпьютер для встраиваемых систем управления). Есть масса фреймворков, которые позволяют осуществлять аппаратное программирование этой платы на JavaScript. Скажем об оcновных.
+		</p>
+			<img src="img/iot.png">
+		<p class="mainText">
+			Johnny-Five - главный фреймворк для программирования <b>робото-техники</b>, выпущенный в 2012 году. Совместим со всеми моделями Arduino, для работы с аналогами есть набор из специальных плагинов. Также модель Arduino поддерживает микроконтроллер Tessel 2, который программируется на JavaScript.  
+			<br><br>
+			Другой универсальный инструмент для управления робототехники - фреймворк Cylon.js. Он поддерживает 36 различных платформ. Его советуют выбирать для работы в 2019 году. Поддерживает декларативный синтаксис, поэтому относительно прост в использовании.
+			<br><br>
+			Отдельно выделим JerryScript (сверхлегкий, для программирования устройств с самым маленьким объемом оперативной памяти), Nodebots и Silk. Последний позволяет заниматься аппаратным программированием Android-устройств с помощью JavaScript.
+			<br><br>
+			Стоит упомянуть и про <b>квадрокоптеры</b>. Именно здесь проникновение JavaScript в робототехнику ощущается особенно сильно - целый ряд современных серийных моделей по умолчанию оснащены операционной системой, которая поддерживает Node.js.
+		</p>
+			<img src="img/cuadro.jpg">
+		<p class="mainText">
+			Самое популярное решение в  области <b>баз данных</b> - использование БД MongoDB в связке с Mongoose ORM. Существует даже заблуждение, что это чуть ли не единственная возможность использовать JavaScript в работе с БД. Однако драйвера для Node.js есть и у большинства других баз данных. Более того, другие связки технологий оказываются на практике не менее простыми и удобными в использовании.
+			<br><br>
+			Но если уж говорить о трендах наступившего года, то выделим GraphQL, разработанный Facebook. Технология обещает стать доминирующей благодаря таким реализациям как платформа Apollo. Она позволяет создавать чрезвычайно мощный и гибкий API и выигрывает конкуренцию у других инструментов. Можно упомянуть и пока малоизвестный фреймворк Hapi.js. По отзывам разработчиков, он отлично подходит для тех, кто хочет добиться максимального контроля над процессом.    	
+		</p>
+		<img src="img/db.jpg">
+
+		<h1><a name="disadvantages">
+			Недостатки языка JavaScript</a></h1>
+		<p class="mainText">
+			Несмотря на большую популярность языка JavaScript, наивно полагать, что он будет идеален во всём - в JavaScript есть ряд недостатков, которые могут ограничить области применения языка, которые, впрочем, могут быть расширены благодаря тем же самым фреймворкам и библиотекам, нивелирующим определённые недостатки языка.<br><br>
+			Основные недостатки языка JavaScript:
+
+			<li class="disadv">
+			<b>В JavaScript не поможет компилятор.</b> Невозможно узнать, работает ли программа до тех пор, пока ее выполнение не дойдет до нужной строчки. Если, например, в этой строке есть опечатка или программа не сможет сложить число с текстом. Тогда выполнение программы остановится. Но в других языках это можно выявить гораздо раньше – на этапе компиляции. Здесь же компилятор не укажет заранее на ошибки и опечатки или на то, что можно оптимизировать код.</li><br>
+
+			<li class="disadv">
+			<b>Необходимость использовать сторонние библиотеки.</b> Язык не поддерживает возможность работы с файлами. Не работает с потоками ввода и вывода. В этих случаях приходится применять фреймворки и библиотеки от других разработчиков. И здесь программист не уверен, не возникнет ли конфликтов в системе в будущем.</li><br>
+
+			<li class="disadv">
+			<b>Низкая безопасность.</b> В интернете легко можно найти и скачать исходные коды для популярных скриптов. Они находятся в свободном доступе. Поэтому сложно гарантировать, что веб-приложение на JS не будет взломано. Ухудшает ситуацию и то, что скрипт выполняется на стороне пользователя каждый раз во время загрузки страницы, а не на сервере, где можно было бы отследить поломку кода.</li><br>
+
+			<li class="disadv">
+			<b>Повсеместное использование.</b> В случае возникновения более совершенного, более удобного языка, который позволит решать те же задачи, но с меньшим количеством ошибок и быстрее – все программы, написанные на JavaScript просто уйдут в небытие. Годы работы впустую. А попытки уже есть, например, google dart – возможная альтернатива.</li><br>
+
+			<li class="disadv">
+			<b>Непривычная объектная модель.</b> Если новичкам учиться на JS отлично, то этого не скажешь про опытных программистов, которые привыкли к реализации классов и их наследованию в языках С# и C++. Здесь реализован другой подход, основанный на прототипах, и придется перестраиваться. То есть класс объектам не присваивается, а наследуется от других объектов (прототипов).</li>
+		</p>
+
+
+		<h1><a name="examples">
+			Примеры использования JavaScript</a></h1>
+		<p class="mainText">
+			И вот, наконец, после того, как мы познакомились с таким необычным языком как JavaScript, мы приступаем к самому интересному - наглядным примерам использования возможностей языка.
+		</p>
+	
+		<a name = "moreExamples"><h2>
+			Для начала давайте познакомимся :)
+		</h2></a>
+		<p class="mainText">Нажмите на кнопку "Ввести имя" под этим текстом и введите свои имя и, по возможности, фамилию. После введения будут открыты все дальнейшие примеры.
+		</p>
+
+		<a href = "#moreExamples"><button class="commonButton leftTrans" style="margin: 30px 0 30px 50% " onclick="
+			setName(prompt('Введите свои имя и фамилию:', ''));
+			shuffleTest();
+
+			setNameFromLocal();
+		">Ввести имя</button></a>
+
+	<div class="hidden secondCont" id="showIt"><!-- ДОБАВИТЬ HIDDEN -->
+		<!--    hidden  -->
+		<h2 id="helloName" style="overflow: hidden"></h2>
+
+		<p class="mainText">Как же вызвать такое окошко, в которое вы ввели имя?<br><br>
+			В JavaScript существует 3 типа всплывающих окон: alert, prompt и confirm. Данные окна вызываются с помощью функций JS. Синтаксис следующий:
+			<li class="commonList">
+				<span id="js"><span class="blue"><span class="blue">alert</span></span>(<span class="orange">text</span>);</span>
+				В браузере появится окошко с надписью 
+				<span id="js"><span class="orange">text</span></span>, 
+				указанной в скобках, и с кнопкой ОК.
+			</li>
+			<li class="commonList">
+				<span id="js"><span class="blue">prompt</span>(<span class="orange">text</span>, <span class="orange">default</span>);</span>
+				Такой пример мы использовали ранее: в брау-зере появляется окошко с надписью 
+				<span id="js"><span class="orange">text</span></span>, 
+				под которой будет строка ввода с надписью default. В скобках параметр 
+				<span id="js"><span class="orange">default</span></span>
+				может быть не указан, но желательно заполнять его хотя бы пустой 
+				строкой (<span id="js"><span class="green">''</span></span>). 
+				Ниже строки ввода располагаются 2 кнопки: ОК и Отмена. Сама функция 
+				<span id="js"><span class="blue">prompt</span></span> 
+				возвращает строку, введённую пользователем. Если пользователь ничего не введёт и 
+				<span id="js"><span class="orange">default</span></span>
+				не будет равен 
+				<span id="js"><span class="green">''</span></span>, 
+				то функция вернёт 
+				<span id="js"><span class="purple">null</span></span>
+				(пустое значение).
+			</li>
+			<li class="commonList">
+				
+				<span id="js"><span class="blue">confirm</span>(<span class="orange">question</span>);</span>
+				В браузере появится окошко, требующее подтверждение того, что написано в 
+				<span id="js"><span class="orange">question</span></span>, 
+				или ответа на этот вопрос. В окошке будет написан сам 
+				<span id="js"><span class="orange">question</span></span>
+				и 2 кнопки снизу: ОК и Отмена. Функция 
+				<span id="js"><span class="blue">confirm</span> </span>
+				возвращает булево значение 
+				<span id="js"><span class="purple">true</span></span>
+				или 
+				<span id="js"><span class="purple">false</span></span>, 
+				в зависимости от того, какую из кнопок нажмёт пользователь.
+			</li>
+		</p>
+		<p class="mainText">
+			Также стоит помнить, что работу в браузере невозможно продолжить, не закрыв данные всплывающие окна нажатием на одну из их кнопок.<br><br>
+			Ниже вы можете увидеть 3 кнопки. При нажатии на каждую из них, вы увидете всплывающее окно.
+		</p>
+		<div class="funcButtons">
+			<button class="commonButton" onclick="
+				alert('Данное окно открывается функцией alert(text)');
+			">Пример окна <span id="js">alert</span></button>
+			<button class="commonButton" onclick="
+				prompt('Данное окно открывается функцией prompt(text, default)', 'текст по-умолчанию');
+			">Пример окна <span id="js">prompt</span></button>
+			<button class="commonButton" onclick="
+				confirm('Данное окно открывается функцией confirm(text)')
+			">Пример окна <span id="js">confirm</span></button>
+		</div>
+		
+		<!--    &#60;           &#62;             -->
+		<p class="mainText">
+			Вы наверняка знаете, что для создания кнопки используется HTML-тег &#60;button&#62;, но как же заставить её выполнять JS-код при нажатии?<br><br>
+			Для этого используется атрибут <span class="green" id="js">onclick = ""</span>. В кавычках пишется код на языке JavaScript. Пример вы можете увидеть ниже:
+		</p>
+
+		<div class="bigExample">
+			<div class="exampleHead"><p>Фрагмент HTML-кода</p></div>
+			<div class="exampleHead"><p>Результат</p></div>
+
+			<div class="codeBlock">
+
+				<div class="stringNumbers">
+					1<br>2<br>3<br>4
+				</div>
+
+				<div class="codeExample">
+					&#60;<span
+					class="orange">button </span>
+					<span class="green">onclick </span>
+					= <span class="orange">"</span><br><span class="tab"></span>
+					<span class="blue">confirm</span>(<span class="orange">'Подтвердите,
+					что вы' +<br><span class="tab"></span
+					>' поняли данную тему'</span>)
+					<span class="orange"><br>"</span>&#62;Текст внутри кнопки&#60;/<span
+					class="orange">button</span>&#62;
+				</div>
+
+			</div>
+
+			<div class="viewExample">
+
+				<a name="triangleSquareLink"><button class="commonButton" onclick="
+				confirm('Подтвердите, что вы поняли данную тему')
+			">Текст внутри кнопки</button></a>
+
+			</div>
+
+		</div>
+
+		<h2>Площадь треугольника</h2>
+
+		<p class="mainText">
+			Идём дальше. Ниже расположены 2 формы для ввода текста. Данные формы созданы с помощью HTML-тега &#60;input&#62; и атрибута <span class="green" id="js">type = "text"</span>. Введите в эти формы 2 числа и нажмите на кнопку ниже "посчитать". Ниже вместо надписи "Здесь будет выведена площадь треугольника" вы увидите число, равное подсчитаной площади.
+		</p>
+
+		<div class="funcButtons" style="height: 40px; align-items: flex-start;">
+			<p class="mainText">Основание треугольника</p>
+			<p class="mainText">Высота треугольника</p>
+		</div>
+		<div class="funcButtons">
+			<input type="text" id="baseTr" class="commonButton">
+			<input type="text" id="heightTr" class="commonButton">
+		</div>
+
+		<button class="commonButton" style="width:200px;height: 70px;margin-left:50%;transform:translateX(-50%)" onclick="
+				let a = document.getElementById('baseTr').value;
+				let h = document.getElementById('heightTr').value;
+				let er = 'Произошла ошибка. Возможно, были введены неверные данные'
+				if (a == '' || h == '') {
+					document.getElementById('triangleSquare').innerHTML = er;
+				}
+				else {
+					let st = squareTriangle(a, h);
+				if (st + '' == 'NaN') {
+					document.getElementById('triangleSquare').innerHTML = er;
+				}
+				else if (st < 0) {
+					document.getElementById('triangleSquare').innerHTML = 
+						'(<b>' + st +'</b>) Площадь треугольника не может<br>быть отрицательной :)'
+				}
+				else document.getElementById('triangleSquare').innerHTML =
+					'Площадь треугольника равна <b>' + st + '</b>';
+				}
+				
+		">Посчитать площадь треугольника</button>
+
+		<p class="mainText" style="	text-align: center;" id="triangleSquare"><b>Здесь будет выведена площадь треугольника</b></p>
+
+		<p class="mainText">
+			Как и до этого, действие по нажатию кнопки происходит благодаря атрибуту <span class = "green" id="js">onclick = ""</span>. Но как можно получить значения, введён-ные в формы?
+		</p>
+		<p class="mainText">
+			В JavaScript для получения доступа к какому-либо объекту можно использовать функцию <span id=js><span class="blue">document.getElementById</span>(<span class="orange">element_id</span>)</span>. <span class="orange" id="js">element_id</span> - это то, что указано в атрибуте <span class = "green" id="js">id = ""</span> у элемента в коде HTML. Чтобы у наших элементов (у форм) получить введённое значение, нам нужно свойство <span id=js>value</span> (<span id=js><span class="blue">document. getElementById</span>(<span class="orange">element_id</span>).value</span>). Теперь-то с этими значениями можно работать и получить из них, например, площадь треугольника по высоте и основанию. Для записи значений используется та же функция, но у нужных элементов необходимо использовать свойство <span id=js>innerHTML</span>, куда уже можно записать любой текст. Далее описан один из наиболее простых способов, как это можно сделать.
+
+		</p>
+
+		<div class="bigExample">
+			<div class="exampleHead"><p>Фрагмент HTML-кода</p></div>
+			<div class="exampleHead"><p>Результат</p></div>
+
+			<div class="codeBlock">
+
+				<div class="stringNumbers">
+					1<br>2<br>3<br>4<br><br>5<br><br>6<br><br><br>7<br>8
+				</div>
+
+				<div class="codeExample">
+
+					&#60;<span class="orange">input</span> <span class="green"
+					>type</span>=<span class="orange">"text"</span> <span class="green"
+					>id</span>=<span class="orange">"base"</span>&#62;<br>
+					&#60;<span class="orange">input</span> <span class="green"
+					>type</span>=<span class="orange">"text"</span> <span class="green"
+					>id</span>=<span class="orange">"height"</span>&#62;<br>
+					&#60;<span class="orange">button</span> <span class="green"
+					>onclick</span>=<span class="orange">"</span><br>
+					<span class="tab"></span>
+					<span class="blue">let</span>
+					a = <span class="blue">document.getElementById</span>(<br>
+					<span class="tab"></span>
+					<span class="orange">'base'</span>).value;<br>
+					<span class="tab"></span>
+					<span class="blue">let</span>
+					h = <span class="blue">document.getElementById</span>(<br>
+					<span class="tab"></span>
+					<span class="orange">'height'</span>).value;<br>
+					<span class="tab"></span>
+					<span class="blue">document.getElementById</span>(<br>
+					<span class="tab"></span>
+					<span class="orange">'squareIs'</span>).innerHTML =<br>
+					<span class="tab"></span>
+					<span class="orange">'Ответ: '</span> + (a * h / <span
+					class="purple">2</span>);
+					<span class="orange">"</span>&#62;Посчитать&#60;/<span
+					class="orange">button</span>&#62;<br>
+					&#60;<span class="orange">p</span> <span class="green"
+					>id</span> = <span class="orange">"squareIs"</span>&#62;Ответ: &#60;/<span
+					class="orange">p</span>&#62;
+
+				</div>
+
+			</div>
+
+			<div class="viewExample">
+				<input type="text" id="base" class="commonButton">
+					<input type="text" id="height" class="commonButton"><span class="tab"></span>
+					<button onclick="
+						let a = document.getElementById('base').value;
+						let h = document.getElementById('height').value;
+						document.getElementById('squareIs').innerHTML = 'Ответ: ' + (a * h / 2);
+					" class="commonButton">Посчитать</button>
+					<p class="mainText" style="text-align: center" id = "squareIs">Ответ: </p>
+			</div>
+
+		</div>
+
+		<a name="stringsEqual"><div class="mainText">
+			Конечно, стоит также помнить о том, что пользователь может ввести и не совсем корректные данные. Попробуйте ввести в одну из форм какую-то строку (состоящую не только из цифр) и результат вычислений станет <span id="js" class="purple">NaN</span> ("not a number" - "не число"). Чтобы такого не происходило, стоит сразу проверить полученные переменные a и h с помощью условных команд <span class="orange" id="js">if</span> и <span class="orange" id="js">else</span>, и вывести в нужном случае сообщение об ошибке в рассчётах.
+		</div></a>
+
+		<h2>Сравнение размеров строк</h2>
+
+		<p class="mainText">В следующем примере мы используем аналогичную конструкцию из 2 форм для ввода текста, но код JS будет выглядеть немного иначе:</p>
+
+		<div class="funcButtons">
+			<input type="text" value="" id="str1" class="commonButton" style="width: 300px;">
+			<input type="text" value="" id="str2" class="commonButton" style="width: 300px;">
+		</div>
+
+		<button class="commonButton" style="width:200px;height: 70px;margin-left:50%;transform:translateX(-50%)" onclick='
+				let s1 = document.getElementById("str1").value;
+				let s2 = document.getElementById("str2").value;
+				if (s1 == "" && s2 == "") {
+					document.getElementById("stringsRes").innerHTML =
+					"Результат: введены пустые строки";
+				}
+				else {
+					document.getElementById("stringsRes").innerHTML =
+					"Результат: <span id=\"js\" class=\"purple\">" +
+					(s1.length == s2.length) + "</span></span>"
+				}				
+		'>Сравнить размеры строк</button>
+
+		<p class="mainText" style="text-align: center;" id="stringsRes">Результат: </p>
+		<p class="mainText">Если количество символов в строках одинаковое,
+			возвращается <span id="js" class="purple">true</span>, а
+			иначе <span id="js" class="purple">false</span>.
+		</p>
+		<a name="array"><p class="mainText">
+			Данный пример очень похож на предыдущий. Из нового здесь только свойство <span id="js">length</span>, которое есть у строк. Например, <span id="js">(<span class="orange">"hello!"</span>.length == <span class="purple">6</span>)</span> - это <span id="js" class="purple">true</span>. Рекомендуем попробовать самостоятельно написать этот код, опираясь на предыдущий пример с площадью треугольника (по сути, кроме кода внутри атрибута <span class="green" id="js">onclick = ""</span>, можно ничего не менять).
+		</p></a>
+
+		<h2>Массив из 5 чисел</h2>
+
+		<p class="mainText">
+			Через те же формы можно создать даже массив - ниже расположены 5 форм для ввода чисел. По нажатию кнопки вы увидите отдельно выведенные наибольшее и наименьшее значения.
+		</p>
+
+		<div class="funcButtons">
+			<input type="text" value="" id="elem1" class="commonButton">
+			<input type="text" value="" id="elem2" class="commonButton">
+			<input type="text" value="" id="elem3" class="commonButton">
+			<input type="text" value="" id="elem4" class="commonButton">
+			<input type="text" value="" id="elem5" class="commonButton">
+		</div>
+
+		<button class="commonButton" style="width:200px;height: 70px;margin-left:50%;transform:translateX(-50%)" onclick='
+				let id, num;
+				let arr = [];
+				let min, max;
+				let f = 1;
+				for (let i = 1; i <= 5; i++) {
+					id = "elem" + i;
+					num = document.getElementById(id).value;
+					if (num / 2 + "" == "NaN" || num.length == 0) {
+						document.getElementById("arrayRes").innerHTML =
+						"Ошибка! Возможно, некоторые элементы массива введены неверно. Проверьте введённые данные и убедитесь, что во всех формах введены числа.";
+						f = 0; break;
+					}
+					num = +num;
+					arr.push(num);
+					if (i == 1) {
+						max = num;
+						min = num;
+					}
+					if (num < min) min = num;
+					if (max < num) max = num;
+				}				
+				if (f == 1) {
+					document.getElementById("arrayRes").innerHTML =
+					"Результат:<br>Наименьший элемент: <b>" + min +
+					"</b><br>Наибольший элемент: <b>" + max + "</b>";
+				}
+		'>Сравнить числа массива</button>
+
+		<p class="mainText" style="text-align: center;" id="arrayRes">Результат: </p>
+
+		<p class="mainText">
+			В данном задании используются всё те же функции, что и в предыдущих заданиях. Важно лишь знать, как использовать массивы в JavaScript. Вот несколько примеров работы с массивами:
+
+			<li class="commonList">
+				<span id="js">array = []</span> - создание пустого массива.
+			</li>
+
+			<li class="commonList">
+				<span id="js">array = [<span class="purple">1</span>, <span class="purple">2</span>, <span class="orange">"hello"</span>, <span class="purple">null</span>]</span> - создание массива с элементами.
+			</li>
+
+			<li class="commonList">
+				<span id="js">array.<span class="blue">push</span>(x)</span> - добавления элемента (<span id="js">x</span>) в конец массива.
+			</li>
+
+			<li class="commonList">
+				<span id="js">array.<span class="blue">pop</span>()</span> - удаление последнего элемента массива.
+			</li>
+
+			<li class="commonList">
+				<span id="js">array.length</span> - свойство, аналогичное свойству у строки, благодаря которому можно узнать количество элементов массива (длину массива).
+			</li>
+
+			<a name="testStart"><li class="commonList">
+				<span id="js">arr1 = arr2 + arr3</span> - конкатенация (сложение) массивов. Например, написав <span id="js">x = [<span class="purple">1</span>, <span class="purple">2</span>] + [<span class="orange">"hello"</span>, <span class="purple">null</span>]</span>, в переменную х будет записан массив <span id="js">[<span class="purple">1</span>, <span class="purple">2</span>, <span class="orange">"hello"</span>, <span class="purple">null</span>]</span>.
+			</li></a>
+		</p>	
+
+
+		<h2>Небольшой тест</h2>
+
+		<p class="mainText">
+			А теперь давайте пройдём небольшой тест по JavaScript, в котором упоминаются материалы из этого сайта. В конце теста вы узнаете ваш результат. Время неограничено.<br>Постарайтесь не подглядывать :)
+		</p>
+
+		<div class="test">
+			<p><b>Вопрос 1.</b> Без каких <b>трёх</b> основных элементов не обходится
+			современная веб-разработка?</p>
+			<div class="forms quater" id="testform1">
+				<label id="lq1_1"><input id="qq1_1" type="checkbox">
+					<p id="q1_1">Python</p>
+				</label>
+
+				<label id="lq1_2"><input id="qq1_2" type="checkbox">
+					<p id="q1_2">HTML</p>
+				</label>
+
+				<label id="lq1_3"><input id="qq1_3" type="checkbox">
+					<p id="q1_3">C#</p>
+				</label>
+
+				<label id="lq1_4"><input id="qq1_4" type="checkbox">
+					<p id="q1_4">Java</p>
+				</label>
+
+				<label id="lq1_5"><input id="qq1_5" type="checkbox">
+					<p id="q1_5">CSS</p>
+				</label>
+
+				<label id="lq1_6"><input id="qq1_6" type="checkbox">
+					<p id="q1_6">JavaScript</p>
+				</label>
+
+				<label id="lq1_7"><input id="qq1_7" type="checkbox">
+					<p id="q1_7">PHP</p>
+				</label>
+				<h3 class="ordend" id="score_1"></h3>
+			</div>
+
+			<p><b>Вопрос 2.</b> Сколько видов всплювающих окон существует в JavaScript?</p>
+			<div class="forms quater" id="testform2">
+				<label id="lq2_1"><input id="qq2_1" type="radio" name="name_q2">
+					<p id="q2_1">1</p>
+				</label>
+
+				<label id="lq2_2"><input id="qq2_2" type="radio" name="name_q2">
+					<p id="q2_2">2</p>
+				</label>
+
+				<label id="lq2_3"><input id="qq2_3" type="radio" name="name_q2">
+					<p id="q2_3">3</p>
+				</label>
+
+				<label id="lq2_4"><input id="qq2_4" type="radio" name="name_q2">
+					<p id="q2_4">4</p>
+				</label>
+				<h3 class="ordend" id="score_2"></h3>
+			</div>
+
+			<p><b>Вопрос 3.</b> С помощью какой функции, метода или свойства можно получить доступ к HTML-элементу?</p>
+			<div class="forms half" id="testform3">
+				<label id="lq3_1"><input id="qq3_1" type="radio" name="name_q3">
+					<p id="q3_1">getAttribute()
+				</p></label>
+
+				<label id="lq3_2"><input id="qq3_2" type="radio" name="name_q3">
+					<p id="q3_2">getElementById()
+				</p></label>
+
+				<label id="lq3_3"><input id="qq3_3" type="radio" name="name_q3">
+					<p id="q3_3">value
+				</p></label>
+
+				<label id="lq3_4"><input id="qq3_4" type="radio" name="name_q3">
+					<p id="q3_4">classList
+				</p></label>
+				<h3 class="ordend" id="score_3"></h3>
+			</div>
+
+			<p><b>Вопрос 4.</b> Что получится, если переменную, не являющуюся числом, поделить на 2?</p>
+			<div class="forms" id="testform4">
+				<label id="lq4_1"><input id="qq4_1" type="radio" name="name_q4">
+					<p id="q4_1">NaN</p>
+				</label>
+
+				<label id="lq4_2"><input id="qq4_2" type="radio" name="name_q4">
+					<p id="q4_2">null</p>
+				</label>
+
+				<label id="lq4_3"><input id="qq4_3" type="radio" name="name_q4">
+					<p id="q4_3">undefined</p>
+				</label>
+
+				<label id="lq4_4"><input id="qq4_4" type="radio" name="name_q4">
+					<p id="q4_4">В консоль выведется сообщение об ошибке</p>
+			</label>
+				<h3 class="ordend" id="score_4"></h3>
+			</div>
+
+			<p><b>Вопрос 5.</b> Что из нижеперечисленного является условным оператором?</p>
+			<div class="forms quater" id="testform5">
+				<label id="lq5_1"><input id="qq5_1" type="checkbox">
+					<p id="q5_1">if</p>
+				</label>
+
+				<label id="lq5_2"><input id="qq5_2" type="checkbox">
+					<p id="q5_2">else</p>
+				</label>
+
+				<label id="lq5_3"><input id="qq5_3" type="checkbox">
+					<p id="q5_3">for</p>
+				</label>
+
+				<label id="lq5_4"><input id="qq5_4" type="checkbox">
+					<p id="q5_4">let</p>
+				</label>
+				<h3 class="ordend" id="score_5"></h3>
+			</div>
+
+			<p style="margin: 0"><b>Вопрос 6.</b> Что можно узнать с помощью свойства length?</p>
+			<div class="forms" id="testform6">
+				<label id="lq6_1"><input id="qq6_1" type="checkbox">
+					<p id="q6_1">Количесто элементов в массиве</p>
+				</label>
+
+				<label id="lq6_2"><input id="qq6_2" type="checkbox">
+					<p id="q6_2">Длину строки</p>
+				</label>
+
+				<label id="lq6_3"><input id="qq6_3" type="checkbox">
+					<p id="q6_3">Количество дочерних элементов</p>
+				</label>
+
+				<label id="lq6_4"><input id="qq6_4" type="checkbox">
+					<p id="q6_4">Количество классов у HTML-элемента</p>
+				</label>
+				<h3 class="ordend" id="score_6"></h3>
+			</div>
+
+			<p><b>Вопрос 7.</b> С помощью какой функции или метода можно добавить элемент в массив?</p>
+			<div class="forms half" id="testform7">
+				<label id="lq7_1"><input id="qq7_1" type="radio" name="name_q7">
+					<p id="q7_1">push(x)</p>
+				</label>
+
+				<label id="lq7_2"><input id="qq7_2" type="radio" name="name_q7">
+					<p id="q7_2">pop(x)</p>
+				</label>
+
+				<label id="lq7_3"><input id="qq7_3" type="radio" name="name_q7">
+					<p id="q7_3">console.log(x)</p>
+				</label>
+
+				<label id="lq7_4"><input id="qq7_4" type="radio" name="name_q7">
+					<p id="q7_4">print(x)</p>
+				</label>
+				<h3 class="ordend" id="score_7"></h3>
+			</div>
+
+			<p style="margin: 0"><b>Вопрос 8.</b> В какие скобки обрамляется массив в JavaScript?</p>
+			<div class="forms half" id="testform8">
+				<label id="lq8_1"><input id="qq8_1" type="radio" name="name_q8">
+					<p id="q8_1">Круглые ()</p>
+				</label>
+
+				<label id="lq8_2"><input id="qq8_2" type="radio" name="name_q8">
+					<p id="q8_2">Фигурные {}</p>
+				</label>
+
+				<label id="lq8_3"><input id="qq8_3" type="radio" name="name_q8">
+					<p id="q8_3">Квадратные []</p>
+				</label>
+
+				<label id="lq8_4"><input id="qq8_4" type="radio" name="name_q8">
+					<p id="q8_4">Треугольные &#60;&#62;</p>
+				</label>
+				<h3 class="ordend" id="score_8"></h3>
+			</div>
+
+			<p style="margin: 0"><b>Вопрос 9.</b> Что можно узнать с помощью свойства value?</p>
+			<div class="forms half" id="testform9">
+				<label id="lq9_1"><input id="qq9_1" type="radio" name="name_q9">
+					<p id="q9_1">Текст, введённый в форму</p>
+				</label>
+
+				<label id="lq9_2"><input id="qq9_2" type="radio" name="name_q9">
+					<p id="q9_2">ID HTML-элемента</p>
+				</label>
+
+				<label id="lq9_3"><input id="qq9_3" type="radio" name="name_q9">
+					<p id="q9_3">Название HTML-тега</p>
+				</label>
+
+				<label id="lq9_4"><input id="qq9_4" type="radio" name="name_q9">
+					<p id="q9_4">Текст внутри тега</p>
+				</label>
+				<h3 class="ordend" id="score_9"></h3>
+			</div>
+
+			<p><b>Вопрос 10*.</b> Что появится в HTML-элементе c ID "elem" после
+				выполнения данного кода на JavaScript:<br>
+				<span id="js">
+					<span class="blue">document.getElementById</span
+						>(<span class="orange">"elem"</span>).innerHTML =<br><span class="tab">
+					</span><span class="orange">"Hello &#60;b&#62;world!&#60;/b&#62;"</span>;
+				</span>
+			</p>
+			<div class="forms" id="testform10">
+				<label id="lq10_1"><input id="qq10_1" type="radio" name="name_q10">
+					<p id="q10_1">В элементе появится текст "Hello world!"</p>
+				</label>
+
+				<label id="lq10_2"><input id="qq10_2" type="radio" name="name_q10">
+					<p id="q10_2">В элементе появится текст "Hello &#60;b&#62;world!&#60;/b&#62;"</p>
+				</label>
+
+				<label id="lq10_3"><input id="qq10_3" type="radio" name="name_q10">
+					<p id="q10_3">В элементе появится текст "Hello <b>world!</b>"</p>
+				</label>
+
+				<label id="lq10_4"><input id="qq10_4" type="radio" name="name_q10">
+					<p id="q10_4">В элементе появится текст "Hello WORLD!"</p>
+				</label>
+				<h3 class="ordend" id="score_10"></h3>
+			</div>
+			<p style="margin-left: 10px; margin-top: 10px"
+				id="score_total"></p>
+		</div>
+
+		<a name="bigWindowLink"><button class="commonButton" style="width:220px;height: 55px;margin-left:50%;transform:translateX(-50%)"
+		onclick="
+			blockTest();
+			colorTestAndScores();
+			printScores();
+		">Узнать результаты</button></a><br><br>
+
+		<a href="#testStart"><button class="commonButton" style="width:220px;height: 55px;margin-left:50%;transform:translateX(-50%)"
+		onclick="
+			window.location.reload();
+		">Попробовать ещё раз</button></a>
+
+		<br><br><br><br><br><br><h2>Заставка на весь экран</h2>
+
+		<p class="mainText">
+			При нажатии на кнопку под этим текстом, вы откроете всплывающее окно на весь экран. Чтобы его убрать, нажмите на любое место.
+		</p>
+
+		<br><br><button class="commonButton" style="width:220px;height: 55px;margin-left:50%;transform:translateX(-50%)"
+		onclick="showWindow();">Показать окно</button>
+
+		<div id="bigWindow" class="hidden invis" onclick="">
+			<div id="smallWindow" class="invis">
+				<p>Текущая дата:</p>
+				<p id="dateWin"></p>
+				<p>Имя пользователя:</p>
+				<p id="userWin">рверепыыпы efwfwefe fewwfewef efwwfe</p>
+				<p style="font-size: 14px;">Чтобы закрыть окно, нажмите ЛКМ в любом месте окна</p>
+			</div>
+		</div>
+
+		<br><br><br><br><br><br><h2>Таймер</h2>
+
+		<div class="funcButtons timerHeads" style="height: 50px">
+			<p>Введите часы:</p>
+			<p>Введите минуты:</p>
+			<p>Введите секунды:</p>
+		</div>
+
+		<div class="funcButtons" style="margin-top: 0; padding-top: 0">
+			<input type="text" value="" id="timer1" class="commonButton">
+			<input type="text" value="" id="timer2" class="commonButton">
+			<input type="text" value="" id="timer3" class="commonButton">
+		</div>
+
+		<h1 id="timerText">00:00:00</h1>
+
+		<div class="funcButtons">
+			<button class="commonButton" onclick="
+				launchTimer();
+			">Запустить</button>
+
+			<button class="commonButton" id = "pauseButton" onclick="
+				timerPause();
+			">Пауза</button>
+
+			<button class="commonButton" onclick="
+				zeroTimer();
+			">Сбросить</button>
+		</div>
+		<p class="mainText" id="timerError" style="text-align: center;"></p>
+
+		<br><br><br><br><br><br><br><br><p class="mainText">
+			На этом краткий экскурс по языку JavaScript подошёл к концу. Надеюсь, вас заинтересовал данный язык, ведь знание это прекрасного языка в наше время - навык очень полезный. В интернете полно материала по JavaScript, благодаря чему даже самостоятельно изучать данный язык просто и, самое главное, интересно. Желаем вам в удачи в вашем продвижении в сфере веб-разработки и не только ;)<br><br>
+			Напомним, что вы можете самостоятельно поизучать сайт на примере любого сайта, в том числе и нашего - просто нажмите ПКМ в любом месте сайта и из выпавшего списка выберите "Просмотреть код элемента".
+		</p>
+		<img src="img/code.png">
+
+	</div></div><!-- Закрытие 2 main-блоков -->
+	
+
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
